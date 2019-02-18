@@ -1,5 +1,5 @@
 <aura:component>
-	<aura:attribute name="text" type="String" deafult="How r u doing?"/>
+	<aura:attribute name="text" type="String" deafult="How r u doing? Hope you are good!"/>
 	
 	<div>
 		<h1>{!v.text}</h1>
