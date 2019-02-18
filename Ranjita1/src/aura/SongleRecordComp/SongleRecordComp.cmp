@@ -1,0 +1,22 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable">
+	<aura:attribute name="Opportunity" type="Opportunity" default="{sobjectType:'Opportunity'}"/>
+    
+        
+    <lightning:recordEditForm
+            onload="{!c.handleLoad}"
+            onsubmit="{!c.handleSubmit}"
+            objectApiName="Opportunity">
+            <!-- the messages component is for error messages -->
+            
+
+            <lightning:inputField fieldName="Name" />
+            <lightning:inputField fieldName="StageName" />
+            <lightning:inputField fieldName="Amount" />
+            <lightning:inputField fieldName="AccountId" />
+            <lightning:inputField fieldName="CloseDate" />
+        	<lightning:input name="input1" label="Enter the value" aura:id="input1" />
+            <div class="slds-m-top_medium">
+                <lightning:button  variant="brand" type="submit" name="save" label="Save" onclick="{!c.showToast}"/>
+            </div>
+        </lightning:recordEditForm>
+</aura:component>

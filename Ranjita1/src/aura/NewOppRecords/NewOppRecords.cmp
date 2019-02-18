@@ -1,0 +1,46 @@
+<aura:component controller="Datatableclass">
+    <aura:attribute name="records" type="Opportunity[]" default="[{'sObjectType' : 'Opportunity'}]"/>
+   <!-- <aura:attribute name="records" type="Opportunity" default="Opportunity"/> -->
+    
+    
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+      <thead>
+        <tr class="slds-text-title_caps">
+          <th scope="col">
+            <div class="slds-truncate" title="Opportunity Name">Opportunity Name</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Close Date">Close Date</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Stage">Stage</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Amount">Amount</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+      	<aura:iteration items="{!v.records}" var="rec" indexVar="index">
+        <tr>
+          <td scope="row" data-label="Opportunity Name">
+          	<lightning:input value="{!rec.Name}" name="input1" label="Name"/>
+          </td>
+          <td data-label="Close Date">
+            <lightning:input value="{!rec.CloseDate}" type="date" name="input1" label="Close Date"/>
+          </td>
+          <td data-label="Stage">
+            <lightning:input value="{!rec.StageName}" name="input1" label="Stage"/>
+          </td>    
+          <td data-label="Amount">
+            <lightning:input value="{!rec.Amount}" type="number" name="input1" label="Amount"/>
+          </td>      
+	    	<td data-label="clear"  id="{!index}">
+	        	<lightning:buttonIcon iconName="utility:clear"  alternativeText="clear" onclick="{!c.remove}"/>
+	      	</td>
+        </tr>     
+        </aura:iteration>   
+      </tbody>
+    </table>
+   <lightning:button label="Save" title="Neutral action" onclick="{!c.save }"/>
+</aura:component>

@@ -1,0 +1,20 @@
+<aura:component >
+	<!--<div style="background-color:black ; margin:40px">
+    	<p style="color:yellow">white Text with black Background [Inline CSS]</p>
+    </div> -->
+    <!--<ltng:require styles="{!$Resource.DemoCSS}" />
+    <p> this is paragraph element</p>
+    <div class="divStyle">
+    	this is div text with divStyle class, which is coming from external css file.
+    </div> -->
+    <!--here div is top level elements and <h1> and <p> is nested level elements-->  
+   
+ 	<div class="divCss">
+      <h1>Hello Developers's</h1>
+      <p>This is sample HTML Paragraph in a DIV elelment.</p>
+   </div>
+   
+  <!--here <p> tag is top level elements-->
+    <p>This is a sample HTML paragraph.<span>with a span element</span></p>  
+
+</aura:component>

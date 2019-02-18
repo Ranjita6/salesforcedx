@@ -1,0 +1,33 @@
+<aura:component >
+  <aura:attribute name="isOpen" type="boolean" default="false" />
+   <br/>
+   <div class="demo-only" style="height: 640px;">
+    <lightning:button variant="brand" label="About SFDCmonkey.com" title="About SFDCmonkey.com" onclick="{!c.handleClick}" />
+     	<aura:if isTrue="{!v.isOpen}" >
+         <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+         <div class="slds-modal__container">
+          <header class="slds-modal__header">
+            
+              <lightning:buttonIcon iconName="utility:close" variant="bare-inverse" class="slds-modal__close" onclick="{!c.closeModal}" alternativeText="close" />
+              <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Modal Header</h2>
+          </header>
+          <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <p><b>The goal of this blog is to provide tips and tricks/workarounds for salesforce developer and admins.
+                                Many of us face the same issues and have the same questions when using and implementing Salesforce.
+                                As a community of users and developers, it is important for us to share our experiences.
+                                I try to reach out to other users and help the Salesforce community in general.
+                                Much of this blog will focus on Lightning(code &amp; config.) but I will also
+                                cover some of the more basic topics in salesforce.
+                                </b>
+                            </p>
+          </div>
+            <footer class="slds-modal__footer">
+            <lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{!c.cancel}"/>
+            <lightning:button variant="brand" label="Like and Close" title="Like and Close" onclick="{!c.likenClose}" />
+          </footer>
+    	</div>
+  		</section>
+      <div class="slds-backdrop slds-backdrop_open"></div>
+            </aura:if>        
+    </div>
+</aura:component>

@@ -1,0 +1,8 @@
+<aura:component >
+	<aura:attribute name="picklistValues" type="Object" />
+	<c:AccountPicklist sObjectName="Opportunity" fieldName="StageName" picklistValues="{!v.picklistValues}" />
+	      
+            
+            
+
+</aura:component>
